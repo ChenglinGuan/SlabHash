@@ -110,7 +110,7 @@ std::string GpuSlabHash<KeyT, ValueT, SlabHashTypeT::ConcurrentMap>::to_string()
 
 template <typename KeyT, typename ValueT>
 double GpuSlabHash<KeyT, ValueT, SlabHashTypeT::ConcurrentMap>::computeLoadFactor(
-    int flag = 0) {
+    int flag ) {
   uint32_t* h_bucket_pairs_count = new uint32_t[num_buckets_];
   uint32_t* d_bucket_pairs_count;
   CHECK_CUDA_ERROR(
